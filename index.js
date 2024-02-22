@@ -61,8 +61,8 @@ function retirar() {
 
 function menu() {
   const escolha = window.prompt(`
-  [1] - Adicionar
-  [2] - Remover
+  [1] - Adicionar produto
+  [2] - Remover produto
   [0] - Sair
   `);
   if (escolha == 1) {
