@@ -9,7 +9,7 @@ Add here a description about your Pull Request
 - [ ] O elemento <script> deve conter o atributo adequado ao projeto.
 - [ ] Implemente uma lista.
 - [ ] Desenvolva funções para adicionar e remover produtos.
-- [ ] Inclua um título <h1>.
+- [ ] Inclua um título h1.
 - [ ] Conter uma imagem interativa.
 - [ ] Adicione um ícone ao site.
 - [ ] Utilize estruturas de repetição.
