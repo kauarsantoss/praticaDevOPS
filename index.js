@@ -61,8 +61,8 @@ function retirar() {
 
 function menu() {
   const escolha = window.prompt(`
-  [1] - Gol do Garro
-  [2] - Foi muito no canto fidelkkkkkj
+  [1] - Adicionar produto
+  [2] - Remover produto
   [0] - Sair
   `);
   if (escolha == 1) {
