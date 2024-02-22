@@ -1,57 +1,52 @@
-// criacao de nos
+// Criação do elemento <h1> e exibição no console
 const h1 = document.createElement("h1");
 console.log(h1);
 
-// preenchendo o nó
+// Preenchimento do elemento <h1> com o texto "DOM"
 h1.innerText = "DOM";
 
-//Colocando na arvore
+// Colocação do elemento <h1> na árvore DOM, no final do corpo do documento
 const body = document.getElementsByTagName("body")[0];
 body.appendChild(h1);
 
-// criando uma imagem e colocando no body
+// Criação de um elemento <img> e definição de atributos src e width
 const img = document.createElement("img");
 img.setAttribute("src", "https://pbs.twimg.com/media/FljQAKvXoAEn1vk.jpg");
 img.setAttribute("width", "1400");
-body.appendChild(img);
+body.appendChild(img); // Adição da imagem ao corpo do documento
 
-// removendo elemento imagem
-// body.removeChild(img);
-// ou
-// img.remove();
-
-// construindo h2
+// Criação do elemento <h2>
 const h2 = document.createElement("h2");
-body.appendChild(h2);
-h2.innerText = "Listinha";
-body.appendChild(h2);
+body.appendChild(h2); // Adição do <h2> ao corpo do documento
+h2.innerText = "Listinha"; // Preenchimento do <h2> com o texto "Listinha"
 
-// construindo UL
+// Criação de um elemento <ul>
 const ul = document.createElement("ul");
-body.appendChild(ul);
+body.appendChild(ul); // Adição da lista ao corpo do documento
 
-// const produtos = [];
-
+// Função para inserir um item na lista
 function inserir() {
-  //Criação do produto
+  // Solicitação ao usuário para digitar o produto
   const produto = window.prompt("Digite o produto");
-  const li = document.createElement("li");
-  ul.appendChild(li);
+  const li = document.createElement("li"); // Criação de um elemento <li>
+  ul.appendChild(li); // Adição do <li> à lista
 
-  //Colocando enfase no texto
+  // Criação de um elemento <em> para enfatizar o texto do produto
   const em = document.createElement("em");
-  em.textContent = produto;
-  li.appendChild(em);
-  ul.appendChild(li);
+  em.textContent = produto; // Preenchimento do <em> com o texto do produto
+  li.appendChild(em); // Adição do <em> ao <li>
+  ul.appendChild(li); // Adição do <li> à lista
 }
 
+// Função para retirar um item da lista
 function retirar() {
+  // Solicitação ao usuário para digitar o produto a ser retirado
   const produtoRetirar = window.prompt("Digite o produto a ser retirado");
 
-  //pegando todos os produtos
+  // Obtém todos os elementos <li>
   const listaProdutos = document.getElementsByTagName("li");
 
-  //encontrando o produto a ser retirado
+  // Itera sobre os elementos para encontrar o produto a ser retirado e removê-lo
   for (let i = 0; i < listaProdutos.length; i++) {
     if (produtoRetirar == listaProdutos[i].textContent) {
       listaProdutos[i].remove();
@@ -59,6 +54,7 @@ function retirar() {
   }
 }
 
+// Função que exibe um menu para o usuário e chama recursivamente de acordo com a escolha
 function menu() {
   const escolha = window.prompt(`
   [1] - Adicionar produto
@@ -78,13 +74,15 @@ function menu() {
   } else if (escolha == 0) {
     console.log("Até logo!");
   } else {
-    window.alert("Digite uma opção valida!");
+    window.alert("Digite uma opção válida!");
     menu();
   }
 }
 
+// Chamada inicial da função menu
 menu();
 
+// Adiciona um evento de clique na imagem para chamar o menu
 img.addEventListener("click", () => {
   menu();
 });
